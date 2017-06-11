@@ -821,6 +821,16 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 #endif
 }
 
+#pragma mark - Override
+
+-(UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    UIView * view = [super hitTest:point withEvent:event];
+    if (view != self) {
+        return view;
+    }
+    return nil;
+}
+
 @end
 
 
